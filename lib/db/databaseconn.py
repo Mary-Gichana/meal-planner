@@ -15,8 +15,20 @@ def create_tables():
     Cursor.execute("""
         CREATE TABLE IF NOT EXISTS mealcategories(
             id INTEGER PRIMARY KEY,
-            name TEXT ,
+            name TEXT)
     """)
+
+    Cursor.execute("""
+        CREATE TABLE IF NOT EXISTS meals(
+            id INTEGER PRIMARY KEY,
+            name TEXT,
+            mealcategories_id INTEGER,
+            FOREIGN KEY(mealcategories_id) REFERENCES mealcategories(id))
+    """)
+
+    conn.commit()
+    conn.close()
+
     
 
     
