@@ -29,6 +29,10 @@ def create_tables():
     conn.commit()
     conn.close()
 
+def close_db_connection(conn):
+    if conn:
+        conn.close()
+
     
 
     
