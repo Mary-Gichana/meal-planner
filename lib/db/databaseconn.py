@@ -12,6 +12,11 @@ def create_tables():
     conn = get_db_connection()
     Cursor = conn.cursor()
 
+    Cursor.execute("""
+        CREATE TABLE IF NOT EXISTS mealcategories(
+            id INTEGER PRIMARY KEY,
+            name TEXT ,
+    """)
     
 
     
