@@ -18,5 +18,15 @@ class MealCategories:
     @property
     def name(self):
         return self._name
+    
+    @name.setter
+    def name(self, new_name):
+     if isinstance(new_name, str):
+            if len(new_name) > 0:
+                    self._name = new_name
+            else:
+                    ValueError("Name must be longer than 0 characters")
+     else:
+                TypeError("Name must be a string")
      
        
